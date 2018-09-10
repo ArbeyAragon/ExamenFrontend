@@ -1,0 +1,66 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span><img width="300"
+           alt="Angular Logo"
+           src="http://localhost:1234/logo-almundo.svg"></span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-grid-list cols="2"
+               rowHeight="3:1">
+
+  <div class="container mar-1"
+       fxLayout="row"
+       fxLayout.xs="column"
+       fxLayoutWrap
+       fxLayoutGap="0.5%"
+       fxLayoutAlign="center">
+    <div fxFlex="30%">
+      <mat-accordion>
+        <mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Filtros
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Nombre del hotel
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <mat-form-field>
+            <input matInput
+                   placeholder="Ingrese el nombre del hotel">
+          </mat-form-field>
+
+        </mat-expansion-panel>
+        <mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Estrellas
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div *ngFor="let hero of [1,2,3,4,5]">
+            <mat-checkbox>
+              <mat-icon svgIcon="star"></mat-icon>
+
+            </mat-checkbox>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+    <div fxFlex="70%">
+      <mat-list>
+        <mat-list-item class="mar-1"
+                       *ngFor="let hero of [1,2,3,4,5]"
+                       role="listitem">
+          <mat-card>Simple card</mat-card>
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </div>
+</mat-grid-list>
